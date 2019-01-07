@@ -1,3 +1,18 @@
+------------------1/7/2019 plugin library for ub16 or ub14------------
+
+steps:
+	 cd ~/Downloads/px3-1.5.5/Firmware/Tools/sitl_gazebo/Build
+		cmake ../
+		make
+		cp *.so ../../../build_posix_sitl_default/build_gazebo/
+
+	must do this when switch from ub14 to ub16 (vis vers)
+
+	also make sure px4-1.7/.../sitl_gazebo... not in LD_LIBRARY_PATH to avoid
+		loading wrong plugin library, in the past, the sitl with gazebo
+		does not work (no gps position report) is possibly due to the 
+		px4-1.7 mavlink_interface plugin library not work with the rest
+
 -----------12/18/18------
 
 ris_14570.world	--------	iris #4, for px4 sitl, port 14570
